@@ -1,0 +1,524 @@
+/*!
+ *
+ *  *
+ *  *
+ *  *      Copyright 2020-2021 Luter.me
+ *  *
+ *  *      Licensed under the Apache License, Version 2.0 (the "License");
+ *  *      you may not use this file except in compliance with the License.
+ *  *      You may obtain a copy of the License at
+ *  *
+ *  *        http://www.apache.org/licenses/LICENSE-2.0
+ *  *
+ *  *      Unless required by applicable law or agreed to in writing, software
+ *  *      distributed under the License is distributed on an "AS IS" BASIS,
+ *  *      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  *      See the License for the specific language governing permissions and
+ *  *      limitations under the License.
+ *  *
+ *  *
+ *
+ */
+
+@charset "utf-8";
+
+@import "./normalize.scss";
+@import "./transition.scss";
+@import "./loading.scss";
+@import "./themes/default.scss";
+@import "./themes/green.scss";
+@import "./themes/glory.scss";
+@import "./themes/white.scss";
+@import "./themes/blue.scss";
+@import "./tooltip.scss";
+
+@mixin scrollbar {
+    max-height: 88vh;
+    margin-bottom: 0.5vh;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(144, 147, 153, 0.3);
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(144, 147, 153, 0.3);
+    }
+}
+
+@mixin base-scrollbar {
+    &::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.4);
+        background-clip: padding-box;
+        border: 3px solid transparent;
+        border-radius: 7px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-track:hover {
+        background-color: #f8fafc;
+    }
+}
+
+/** 基础通用 **/
+.p5 {
+    padding: 5px !important;
+}
+
+.p10 {
+    padding: 10px !important;
+}
+
+.p10 {
+    padding: 20px !important;
+}
+
+.pt5 {
+    padding-top: 5px !important;
+}
+
+.pr5 {
+    padding-right: 5px !important;
+}
+
+.pr10 {
+    padding-right: 10px !important;
+}
+
+.pr20 {
+    padding-right: 20px !important;
+}
+
+.pb5 {
+    padding-bottom: 5px !important;
+}
+
+.pb10 {
+    padding-bottom: 10px !important;
+}
+
+.pb20 {
+    padding-bottom: 20px !important;
+}
+
+.m5 {
+    margin: 5px !important;
+}
+
+.m10 {
+    margin: 10px !important;
+}
+
+.m20 {
+    margin: 20px !important;
+}
+
+.mt5 {
+    margin-top: 5px !important;
+}
+
+.mr5 {
+    margin-right: 5px !important;
+}
+
+.mr10 {
+    margin-right: 10px !important;
+}
+
+.mb5 {
+    margin-bottom: 5px !important;
+}
+
+.mb8 {
+    margin-bottom: 8px !important;
+}
+
+.ml5 {
+    margin-left: 5px !important;
+}
+
+.mt10 {
+    margin-top: 10px !important;
+}
+
+.mr10 {
+    margin-right: 10px !important;
+}
+
+.mb10 {
+    margin-bottom: 10px !important;
+}
+
+.ml10 {
+    margin-left: 10px !important;
+}
+
+.ml20 {
+    margin-left: 20px !important;
+}
+
+.mt20 {
+    margin-top: 20px !important;
+}
+
+.mr20 {
+    margin-right: 20px !important;
+}
+
+.mb20 {
+    margin-bottom: 20px !important;
+}
+
+.ml20 {
+    margin-left: 20px !important;
+}
+
+.fs-default {
+    font-size: $base-font-size-default !important;
+}
+
+.fs-mini {
+    font-size: $base-font-size-mini !important;
+}
+
+.fs-small {
+    font-size: $base-font-size-small !important;
+}
+
+.fs-big {
+    font-size: $base-font-size-big !important;
+}
+
+.fs-bigger {
+    font-size: $base-font-size-bigger !important;
+}
+
+.fs-max {
+    font-size: $base-font-size-max !important;
+}
+
+
+.color-primary {
+    color: $base-color-default !important;
+}
+
+.color-success {
+    color: $base-color-green !important;
+}
+
+.color-warning {
+    color: $base-color-orange !important;
+}
+
+.color-info {
+    color: $base-color-gray !important;
+}
+
+.color-danger {
+    color: $base-color-red !important;
+}
+
+img {
+    object-fit: cover;
+}
+
+a {
+    color: $base-color-blue;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+//基础通用
+html {
+    body {
+        position: relative;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        font-size: $base-font-size-default;
+        color: #2c3e50;
+        background: $base-color-gray;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        @include base-scrollbar;
+
+        div {
+            @include base-scrollbar;
+        }
+
+        svg,
+        i {
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        /* el-tag开始 */
+        .el-tag + .el-tag {
+            margin-left: 10px;
+        }
+
+        /* el-tag结束 */
+        /*el-tabs开始*/
+        .el-tabs__item {
+            font-size: $base-font-size-default !important;
+        }
+
+        /*el-tabls结束*/
+        /* markdown编辑器开始 */
+        .editor-toolbar {
+            .no-mobile,
+            .fa-question-circle {
+                display: none;
+            }
+        }
+
+        /* markdown编辑器结束 */
+
+        /* 间隔线开始 */
+        .el-divider--horizontal {
+            margin: 10px 0 25px 0;
+
+            .el-divider__text {
+                display: -webkit-box;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+            }
+        }
+
+        /* 间隔线结束 */
+
+        /* 大图展示开始 */
+        .el-image-viewer {
+            &__close {
+                .el-icon-circle-close {
+                    color: $base-color-white;
+                }
+            }
+        }
+
+        /* 大图展示结束 */
+
+        /* 进度条开始 */
+        #nprogress {
+            position: fixed;
+            z-index: $base-z-index;
+
+            .bar {
+                background: $base-color-blue !important;
+            }
+
+            .peg {
+                box-shadow: 0 0 10px $base-color-blue, 0 0 5px $base-color-blue !important;
+            }
+        }
+
+        /* 进度条结束 */
+
+        /* 表格开始 */
+        .el-table {
+            //上下对齐
+            th {
+                background: #f5f7fa;
+
+                .cell {
+                    padding-left: 14px !important;
+                    padding-right: 14px !important;
+                }
+            }
+
+            //表头样式
+            .el-table__header-wrapper, .el-table__fixed-header-wrapper {
+                th {
+                    word-break: break-word;
+                    background-color: #f8f8f9;
+                    color: #000000;
+                    height: 30px;
+                    font-size: 14px;
+                    font-weight: 900;
+
+                }
+            }
+
+            //内容区域样式
+            .el-table__body-wrapper {
+                @include base-scrollbar;
+
+                .el-button [class*="el-icon-"] + span {
+                    margin-left: 1px;
+                }
+
+                td,
+                th {
+                    position: relative;
+                    box-sizing: border-box;
+
+                    .cell {
+                        font-size: $base-font-size-default;
+                        font-weight: normal;
+                        color: #606266;
+
+                        .el-image {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: $base-border-radius;
+                        }
+                    }
+                }
+            }
+        }
+
+        /* 表格结束 */
+
+        /* 分页开始 */
+        .el-pagination {
+            padding: 2px 5px;
+            margin: 15px 0 0 0;
+            font-weight: normal;
+            color: $base-color-black;
+            text-align: center;
+        }
+
+        /* 分页结束 */
+
+        /* 菜单开始 */
+        .el-menu.el-menu--popup.el-menu--popup-right-start {
+            @include scrollbar;
+            margin-left: 0 !important;
+        }
+
+        .el-menu.el-menu--popup.el-menu--popup-bottom-start {
+            @include scrollbar;
+            margin-left: 0 !important;
+        }
+
+        .el-submenu__title i {
+            color: $base-color-white;
+        }
+
+        /* 菜单结束 */
+
+        /* 弹窗开始 */
+
+        .el-dialog,
+        .el-message-box {
+            &__body {
+                border-top: 1px solid $base-border-color;
+
+                .el-form {
+                    padding-right: 30px;
+                }
+            }
+
+            &__footer {
+                padding: $base-padding;
+                text-align: right;
+                border-top: 1px solid $base-border-color;
+            }
+
+            &__content {
+                padding: 20px 20px 20px 20px;
+            }
+        }
+
+        /* 弹窗结束 */
+
+        /* 卡片开始 */
+        .el-card {
+            margin-bottom: 15px;
+
+            &__body {
+                padding: $base-padding;
+            }
+        }
+
+        /* 卡片结束 */
+
+        /* 下拉树样式-----------开始 */
+        .select-tree-popper {
+            .el-scrollbar {
+                .el-scrollbar__view {
+                    .el-select-dropdown__item {
+                        height: auto;
+                        max-height: 274px;
+                        padding: 0;
+                        overflow-y: auto;
+                        line-height: 26px;
+                    }
+                }
+            }
+        }
+
+        /* 下拉树样式-----------结束 */
+
+        /*文本选中样式*/
+        ::selection {
+            background-color: #2932e1;
+            color: $base-color-white;
+        }
+
+        /*文本选中样式*/
+        /*tooltip*/
+        .el-tooltip__popper {
+            max-width: 800px
+        }
+
+        /*tooltip*/
+        /*所有 *-content的背景色样式设置*/
+        .main-wrapper {
+            .app-main-container {
+                @include base-scrollbar;
+
+                > [class*="-container"] {
+                    padding: $base-padding !important;
+                    margin: 2px $base-padding 0 $base-padding !important;
+                    background: $base-color-white !important;
+                }
+
+                > [class*="-page-content"] {
+                    padding: $base-padding !important;
+                    margin: 2px $base-padding 0 $base-padding !important;
+                    background: $base-color-white !important;
+                }
+            }
+        }
+
+        /*treeSelect input高度100% */
+        .vue-treeselect__control {
+            height: 100% !important;
+        }
+
+        /*treeSelect*/
+        //遮罩背景
+        .v-modal {
+            background-color: rgba(0, 0, 0, .5);
+            opacity: .5;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+
+        //遮罩背景
+    }
+}

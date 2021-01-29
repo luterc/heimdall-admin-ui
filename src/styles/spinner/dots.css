@@ -1,0 +1,132 @@
+/*
+ *
+ *  *
+ *  *
+ *  *      Copyright 2020-2021 Luter.me
+ *  *
+ *  *      Licensed under the Apache License, Version 2.0 (the "License");
+ *  *      you may not use this file except in compliance with the License.
+ *  *      You may obtain a copy of the License at
+ *  *
+ *  *        http://www.apache.org/licenses/LICENSE-2.0
+ *  *
+ *  *      Unless required by applicable law or agreed to in writing, software
+ *  *      distributed under the License is distributed on an "AS IS" BASIS,
+ *  *      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  *      See the License for the specific language governing permissions and
+ *  *      limitations under the License.
+ *  *
+ *  *
+ *
+ */
+
+.dots-loader:not(:required) {
+  position: relative;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  text-indent: -9999px;
+  background: transparent;
+  border-radius: 100%;
+  box-shadow: #f86 -14px -14px 0 7px,
+    #fc6 14px -14px 0 7px,
+    #6d7 14px 14px 0 7px,
+    #4ae -14px 14px 0 7px;
+  transform-origin: 50% 50%;
+  animation: dots-loader 5s infinite ease-in-out;
+}
+
+@keyframes dots-loader {
+  0% {
+    box-shadow: #f86 -14px -14px 0 7px,
+      #fc6 14px -14px 0 7px,
+      #6d7 14px 14px 0 7px,
+      #4ae -14px 14px 0 7px;
+  }
+
+  8.33% {
+    box-shadow: #f86 14px -14px 0 7px,
+      #fc6 14px -14px 0 7px,
+      #6d7 14px 14px 0 7px,
+      #4ae -14px 14px 0 7px;
+  }
+
+  16.67% {
+    box-shadow: #f86 14px 14px 0 7px,
+      #fc6 14px 14px 0 7px,
+      #6d7 14px 14px 0 7px,
+      #4ae -14px 14px 0 7px;
+  }
+
+  25% {
+    box-shadow: #f86 -14px 14px 0 7px,
+      #fc6 -14px 14px 0 7px,
+      #6d7 -14px 14px 0 7px,
+      #4ae -14px 14px 0 7px;
+  }
+
+  33.33% {
+    box-shadow: #f86 -14px -14px 0 7px,
+      #fc6 -14px 14px 0 7px,
+      #6d7 -14px -14px 0 7px,
+      #4ae -14px -14px 0 7px;
+  }
+
+  41.67% {
+    box-shadow: #f86 14px -14px 0 7px,
+      #fc6 -14px 14px 0 7px,
+      #6d7 -14px -14px 0 7px,
+      #4ae 14px -14px 0 7px;
+  }
+
+  50% {
+    box-shadow: #f86 14px 14px 0 7px,
+      #fc6 -14px 14px 0 7px,
+      #6d7 -14px -14px 0 7px,
+      #4ae 14px -14px 0 7px;
+  }
+
+  58.33% {
+    box-shadow: #f86 -14px 14px 0 7px,
+      #fc6 -14px 14px 0 7px,
+      #6d7 -14px -14px 0 7px,
+      #4ae 14px -14px 0 7px;
+  }
+
+  66.67% {
+    box-shadow: #f86 -14px -14px 0 7px,
+      #fc6 -14px -14px 0 7px,
+      #6d7 -14px -14px 0 7px,
+      #4ae 14px -14px 0 7px;
+  }
+
+  75% {
+    box-shadow: #f86 14px -14px 0 7px,
+      #fc6 14px -14px 0 7px,
+      #6d7 14px -14px 0 7px,
+      #4ae 14px -14px 0 7px;
+  }
+
+  83.33% {
+    box-shadow: #f86 14px 14px 0 7px,
+      #fc6 14px -14px 0 7px,
+      #6d7 14px 14px 0 7px,
+      #4ae 14px 14px 0 7px;
+  }
+
+  91.67% {
+    box-shadow: #f86 -14px 14px 0 7px,
+      #fc6 14px -14px 0 7px,
+      #6d7 14px 14px 0 7px,
+      #4ae -14px 14px 0 7px;
+  }
+
+  100% {
+    box-shadow: #f86 -14px -14px 0 7px,
+      #fc6 14px -14px 0 7px,
+      #6d7 14px 14px 0 7px,
+      #4ae -14px 14px 0 7px;
+  }
+}

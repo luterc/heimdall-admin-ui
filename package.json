@@ -1,0 +1,101 @@
+{
+  "name": "Heimdall-Admin",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Luter",
+  "participants": [],
+  "homepage": "https://github.com/luterc",
+  "scripts": {
+    "dev": "vue-cli-service serve --open",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build:report": "vue-cli-service build --report"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@riophae/vue-treeselect": "^0.4.0",
+    "@toast-ui/vue-editor": "^2.5.1",
+    "animate.css": "^4.1.1",
+    "axios": "^0.20.0",
+    "clipboard": "^2.0.6",
+    "codemirror": "^5.58.3",
+    "core-js": "^3.6.5",
+    "cropperjs": "^1.5.9",
+    "dayjs": "^1.9.1",
+    "echarts": "^5.0.1",
+    "echarts-liquidfill": "^3.0.0",
+    "echarts-wordcloud": "^2.0.0",
+    "element-ui": "^2.15.0",
+    "file-saver": "^2.0.1",
+    "js-cookie": "^2.2.1",
+    "json2csv": "^5.0.3",
+    "jszip": "^3.2.1",
+    "lodash": "^4.17.20",
+    "nprogress": "^0.2.0",
+    "qs": "^6.9.4",
+    "resize-detector": "^0.1.10",
+    "screenfull": "^5.0.2",
+    "script-loader": "^0.7.2",
+    "sweetalert2": "^10.9.0",
+    "vue": "^2.6.12",
+    "vue-count-to": "^1.0.13",
+    "vue-cropper": "^0.5.5",
+    "vue-cropperjs": "^4.2.0",
+    "vue-i18n": "^8.22.0",
+    "vue-router": "^3.4.5",
+    "vuedraggable": "^2.24.2",
+    "vuex": "^3.5.1",
+    "xlsx": "^0.14.1",
+    "zrender": "^4.3.2"
+  },
+  "devDependencies": {
+    "@babel/register": "^7.11.5",
+    "@vue/cli-plugin-babel": "^4.5.8",
+    "@vue/cli-plugin-eslint": "^4.5.8",
+    "@vue/cli-plugin-router": "^4.5.8",
+    "@vue/cli-plugin-vuex": "^4.5.8",
+    "@vue/cli-service": "^4.5.8",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "autoprefixer": "^10.0.1",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-dynamic-import-node": "^2.3.3",
+    "compression-webpack-plugin": "^6.0.2",
+    "eslint": "^7.10.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-vue": "^7.0.1",
+    "husky": "^4.3.0",
+    "image-webpack-loader": "^7.0.1",
+    "increase-memory-limit": "^1.0.7",
+    "lint-staged": "^10.4.0",
+    "mockjs": "^1.1.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "plop": "^2.7.4",
+    "prettier": "^2.1.2",
+    "sass": "^1.26.11",
+    "sass-loader": "^10.0.2",
+    "script-ext-html-webpack-plugin": "^2.1.4",
+    "script-loader": "^0.7.2",
+    "stylelint": "^13.7.2",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recess-order": "^2.1.0",
+    "svg-sprite-loader": "^5.0.0",
+    "svgo": "^1.3.2",
+    "terser-webpack-plugin": "^4.2.3",
+    "vue-template-compiler": "^2.6.12",
+    "webpackbar": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=8.9",
+    "npm": ">= 3.0.0"
+  }
+}

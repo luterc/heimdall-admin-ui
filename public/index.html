@@ -1,0 +1,61 @@
+<!--
+  ~ /*
+  ~  *
+  ~  *
+  ~  *      Copyright 2020-2021 Luter.me
+  ~  *
+  ~  *      Licensed under the Apache License, Version 2.0 (the "License");
+  ~  *      you may not use this file except in compliance with the License.
+  ~  *      You may obtain a copy of the License at
+  ~  *
+  ~  *        http://www.apache.org/licenses/LICENSE-2.0
+  ~  *
+  ~  *      Unless required by applicable law or agreed to in writing, software
+  ~  *      distributed under the License is distributed on an "AS IS" BASIS,
+  ~  *      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  *      See the License for the specific language governing permissions and
+  ~  *      limitations under the License.
+  ~  *
+  ~  *
+  ~  */
+  -->
+
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico"/>
+    <title><%= VUE_APP_TITLE %></title>
+    <link rel="stylesheet" href="<%= BASE_URL %>static/css/loading.css"/>
+    <link rel="stylesheet" href="<%= BASE_URL %>static/vendor/font-awsome/5.15.5/css/all.min.css"/>
+</head>
+<body>
+<noscript>
+    <div style="font-weight:900;font-size:24px;color:red;text-align: center">非常抱歉,您的浏览器不支持JavaScript,您无法使用系统:<%=
+        VUE_APP_TITLE %>
+    </div>
+</noscript>
+<div id="app">
+    <div class="first-loading-wrp">
+        <!--        effect1-->
+<!--        <div class="loading-wrp">-->
+<!--          <span class="dot dot-spin">-->
+<!--            <i></i>-->
+<!--            <i></i>-->
+<!--            <i></i>-->
+<!--            <i></i>-->
+<!--          </span>-->
+<!--        </div>-->
+        <!--      effect2-->
+        <div class="lds-hourglass"></div>
+        <h1><%= VUE_APP_TITLE %></h1>
+    </div>
+</div>
+<script>
+    /^http(s*):\/\//.test(location.href) ||
+    alert("此应用需要部署到服务器下才可以正确访问");
+</script>
+</body>
+</html>
