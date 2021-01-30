@@ -66,8 +66,6 @@
       :show-export-csv-btn="false"
       @refresh="getListData(true)"
       @toggle-search="toggleQueryForm"
-      @excel-export="handleExcelExport"
-      @csv-export="handleCSVExport"
     ></toolbar>
     <!--    分页表格-->
     <list-panel>
@@ -102,13 +100,16 @@
         >
           <template #default="{ row }">
             <el-tag
-              v-if="$store.state.user.username === row.details.user.username"
+              v-if="
+                row.details &&
+                $store.state.user.username === row.details.user.username
+              "
               size="mini"
               effect="dark"
             >
-              {{ row.details.user.username }}
+              {{ row.details && row.details.user.username }}
             </el-tag>
-            <span v-else>{{ row.details.user.username }}</span>
+            <span v-else>{{ row.details && row.details.user.username }}</span>
           </template>
         </el-table-column>
         <el-table-column
@@ -150,7 +151,10 @@
         <el-table-column label="Actions">
           <template #default="{ row }">
             <el-button
-              v-if="$store.state.user.username !== row.details.user.username"
+              v-if="
+                row.details &&
+                $store.state.user.username !== row.details.user.username
+              "
               type="text"
               class="color-danger"
               @click="handleDelete(row)"
