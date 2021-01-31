@@ -152,7 +152,7 @@
           <template #default="{ row }">
             <el-button
               v-if="
-                row.details &&
+                row.details ||
                 $store.state.user.username !== row.details.user.username
               "
               type="text"
@@ -264,10 +264,7 @@
       //删除
       handleDelete(row) {
         this.deleteById({
-          sessionId:
-            row && row.sessionId
-              ? row.sessionId
-              : this.table.selections[0].sessionId,
+          sessionId: row && row.id ? row.id : this.table.selections[0].id,
         });
       },
       //查询列表数据

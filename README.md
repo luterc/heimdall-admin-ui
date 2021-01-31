@@ -47,6 +47,7 @@ $ npm run build:report
 欢迎fork，star，欢迎提需求，欢迎吐槽，支持共建！
 
 *如果你感觉好用的话，支持刷火箭 !*
+
 ## UI 效果
 
 ![](./.imgs/login.png)

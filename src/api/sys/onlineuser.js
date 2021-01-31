@@ -40,7 +40,7 @@ export function getOnlineuserList(params) {
  */
 export function kickoutUser(params) {
   return request({
-    url: "/sys/online/kickout",
+    url: "/sys/online/kick",
     method: "post",
     params,
   });
