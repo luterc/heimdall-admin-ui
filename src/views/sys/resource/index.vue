@@ -102,6 +102,12 @@
           </template>
         </el-table-column>
         <el-table-column
+          prop="seqNo"
+          label="顺序"
+          min-width="70"
+          show-overflow-tooltip
+        ></el-table-column>
+        <el-table-column
           prop="name"
           label="名称"
           show-overflow-tooltip
@@ -154,12 +160,7 @@
             <span>{{ row.hidden ? "隐藏" : "显示" }}</span>
           </template>
         </el-table-column>
-        <el-table-column
-          prop="seqNo"
-          label="顺序"
-          min-width="70"
-          show-overflow-tooltip
-        ></el-table-column>
+
         <el-table-column label="操作" min-width="120" fixed="right">
           <template #default="{ row }">
             <el-button

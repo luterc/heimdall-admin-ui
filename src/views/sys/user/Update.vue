@@ -93,7 +93,7 @@
         <el-col :span="24">
           <el-form-item label="角色" prop="roles">
             <el-select
-              v-model="form.userRoles"
+              v-model="form.roles"
               style="width: 100%"
               multiple
               filterable
@@ -192,7 +192,7 @@
           realName: "",
           nickName: "",
           username: "",
-          userRoles: [],
+          roles: [],
           posts: [],
           address: "",
           department: null,
@@ -325,7 +325,6 @@
       async getByid() {
         const { data } = await getUserById(this.objId);
         this.form = data;
-        this.form.dept = data.dept ? data.dept.id : null;
       },
       async getSysAllRoles() {
         const { data } = await getRoleListAll();

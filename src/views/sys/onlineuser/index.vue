@@ -275,8 +275,8 @@
         this.table.loading = true;
         getOnlineuserList(this.queryForm.query)
           .then((res) => {
-            this.table.items = res.data.records;
-            this.table.total = Number(res.data.totalCount);
+            this.table.items = res.data;
+            this.table.total = Number(res.data.length);
             this.table.loading = false;
           })
           .catch((err) => {

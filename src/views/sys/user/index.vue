@@ -117,11 +117,6 @@
             ></span>
           </template>
         </el-table-column>
-        <el-table-column prop="dept" label="部门" show-overflow-tooltip>
-          <template #default="{ row }">
-            <span>{{ row.department ? row.department.name : "" }}</span>
-          </template>
-        </el-table-column>
         <el-table-column
           prop="cellPhone"
           label="手机号"
@@ -324,7 +319,7 @@
             confirmButtonText: "确定",
             cancelButtonText: "取消",
             inputPlaceholder: "请输入新密码",
-            inputPattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{6,16}$/,
+            // inputPattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{6,16}$/,
             inputErrorMessage:
               "密码至少6-16个字符，至少1个大写字母，1个小写字母和1个数字",
           })

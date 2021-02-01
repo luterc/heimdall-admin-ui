@@ -58,7 +58,7 @@
         <el-input-number
           v-model="form.seqNo"
           :min="0"
-          :max="1000"
+          :max="10000"
           label="顺序"
         ></el-input-number>
       </el-form-item>

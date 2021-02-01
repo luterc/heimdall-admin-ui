@@ -37,10 +37,11 @@ export function getDepartmentList(params) {
 /**
  * 组织机构树
  */
-export function getDepartmentTree() {
+export function getDepartmentTree(params) {
   return request({
     url: "/sys/department/tree",
     method: "get",
+    params: params,
   });
 }
 
